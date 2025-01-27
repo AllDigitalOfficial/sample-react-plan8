@@ -8,7 +8,7 @@ const ContractData = () => {
 
   return (
     <div className="container py-5">
-      <div className="row mb-4">
+      {/*<div className="row mb-4">
         <div className="col-12">
           <div
             className="card p-4 shadow-sm"
@@ -29,7 +29,7 @@ const ContractData = () => {
             </span>
           </div>
         </div>
-      </div>
+      </div>*/}
 
       <div className="row g-4 d-flex align-items-stretch">
         <div className="col-md-6 col-lg-3">

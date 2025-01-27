@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import {
   ContractData,
   HeroSection,
@@ -13,7 +14,7 @@ import {
 
 const App: React.FC = () => {
   useEffect(() => {
-    document.title = import.meta.env.VITE_APP_TITLE || "Bnbclub";
+    document.title = import.meta.env.VITE_APP_TITLE || "BnbPump";
     const favicon = document.querySelector(
       "link[rel*='icon']"
     ) as HTMLLinkElement;
