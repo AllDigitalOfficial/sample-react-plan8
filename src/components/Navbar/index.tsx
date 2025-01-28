@@ -7,7 +7,7 @@ const Navbars = () => {
   const buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "transparent"; // Default to blue
   const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "#ffffff"; // Default to white
   const buttonBorderColor =
-    import.meta.env.VITE_APP_BUTTON_BORDER_COLOR || "transparent"; // Default to blue
+    import.meta.env.VITE_APP_BUTTON_BORDER_COLOR || "#ffffff"; // Default to blue
 
   return (
     <>
@@ -27,7 +27,7 @@ const Navbars = () => {
               alt="Logo"
               src={import.meta.env.VITE_APP_LOGO || "BNBPUMP-LOGO.png"}
               className="img-fluid"
-              style={{ width: "250px", height: "auto", marginLeft: "150px", alignSelf: "right" }}
+              style={{ width: "250px", height: "auto", marginLeft: "72px", alignSelf: "right" }}
             />
           </Navbar.Brand>
 
@@ -35,11 +35,12 @@ const Navbars = () => {
           <Nav className="ms-auto d-flex align-items-center flex-wrap">
             <Button
               variant="outline-light"
-              className="me-5 mb-10 btn-responsive"
+              className="me-5 mb-3 btn-responsive"
               style={{
                 backgroundColor: buttonBgColor,
                 color: buttonTextColor,
                 borderColor: buttonBorderColor,
+                marginLeft: "10px", alignSelf: "right"
               }}
               onClick={() =>
                 window.open(import.meta.env.VITE_SMART_CONTRACT || "https://bscscan.com/address/0x1510930bc9959cc4163be0b8503636161c81d014#code", "_blank")
@@ -47,13 +48,15 @@ const Navbars = () => {
             >
               Smart Contract {import.meta.env.VITE_SMART_CONTRACT}
             </Button>
+            <p></p>
             <Button
               variant="outline-light"
-              className="me-5 mb-10 btn-responsive"
+              className="me-5 mb-3 btn-responsive"
               style={{
                 backgroundColor: buttonBgColor,
                 color: buttonTextColor,
                 borderColor: buttonBorderColor,
+                marginLeft: "10px", alignSelf: "right"
               }}
             >
               Connect Wallet
@@ -73,7 +76,7 @@ const Navbars = () => {
         }
 
         /* For smaller screens */
-        @media (max-width: 768px) {
+        @media (max-width: 500px) {
           .btn-responsive {
             font-size: 1rem;
             padding: 8px 16px;

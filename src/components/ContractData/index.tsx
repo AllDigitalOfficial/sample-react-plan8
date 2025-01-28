@@ -61,6 +61,7 @@ const ContractData = () => {
             <p id="total-users" className="fs-5 fw-bold">
               0
             </p>
+            <p className="text-muted">*approx</p>
             <i className="bi bi-person-circle fs-3 text-primary"></i>
           </div>
         </div>

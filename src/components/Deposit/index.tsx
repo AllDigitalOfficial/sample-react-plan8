@@ -1,8 +1,9 @@
+import './Deposit.css';
 const Deposit = () => {
   // Get environment variable values
-  const depositBgColor = import.meta.env.VITE_APP_DEPOSIT_BG_COLOR || "#f8f9fa";
+  const depositBgColor = import.meta.env.VITE_APP_DEPOSIT_BG_COLOR || "#FFFFFF0B";
   const depositTextColor =
-    import.meta.env.VITE_APP_DEPOSIT_TEXT_COLOR || "#000000";
+    import.meta.env.VITE_APP_DEPOSIT_TEXT_COLOR || "#ffffff";
   const buttonColor = import.meta.env.VITE_APP_BUTTON_COLOR || "#007bff";
   const minDeposit = import.meta.env.VITE_APP_MIN_DEPOSIT || 0.05;
   const maxDeposit = import.meta.env.VITE_APP_MAX_DEPOSIT || 1000;
@@ -21,10 +22,12 @@ const Deposit = () => {
           <div className="col-lg-6 col-md-12 mb-4 mb-lg-0">
             <div className="deposit-content">
               <div className="section-title mb-3">
-                <h2 style={{ color: depositTextColor }}>Deposit</h2>
+                <h2 style={{ color: depositTextColor, textAlign: 'center', marginBottom: '50px' }}> Make New Deposit</h2>
+                <p></p>
+                <h5 style={{ color: depositTextColor, textAlign: 'center', marginBottom: '30px' }}>Enter Amount:</h5>
               </div>
+              <p ></p>
               <div className="deposit-form">
-                <h4>Make New</h4>
                 <div className="input-group mb-3" style={{ height: "50px" }}>
                   <input
                     id="depositAmount"
@@ -32,6 +35,8 @@ const Deposit = () => {
                     className="form-control"
                     placeholder="0.000"
                     style={{ height: "100%" }}
+                    min="0.00"
+                    step="0.01"
                   />
                   <span className="input-group-text" style={{ height: "100%" }}>
                     BNB
@@ -50,8 +55,7 @@ const Deposit = () => {
                   MAKE DEPOSIT
                 </button>
                 <div className="limits text-muted">
-                  <p>Minimum {minDeposit} BNB</p>
-                  <p>Maximum {maxDeposit} BNB</p>
+                  <h6 style={{color: depositTextColor}}><p> *Minimum {minDeposit} BNB ~ {maxDeposit} BNB</p></h6>
                 </div>
               </div>
             </div>

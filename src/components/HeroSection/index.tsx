@@ -60,18 +60,18 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-
+          
           {/* Right Section: BlackChain Illustration */}
           <div className="col-lg-13 col-md-8 d-flex align-items-right">
             <img
               src="/BNB Pump IMG 1.png"
               alt="Blockchain Illustration"
               className="img-fluid"
-              style={{ maxWidth: "100%", height: "auto" }}
+              style={{ maxWidth: "110%", height: "90%", marginBottom: '10px', marginTop:'30px', marginLeft: '-20px' }}
             />
           </div>
-          <div className="my-5">
-            <hr className="border-secondary opacity-20" />
+          <div className="my-3">
+            <hr className="border-secondary opacity-10" />
           </div>
           {/* Below Section:  */}
           <div className="row justify-content-center">
