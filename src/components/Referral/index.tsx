@@ -54,10 +54,10 @@ const Referral = () => {
             <div className="col-md-6 mb-3">
               <div
                 className="card shadow-sm p-3"
-                style={{ backgroundColor: cardBgColor, color: cardTextColor }}
+                style={{ backgroundColor: cardBgColor, color: cardTextColor , textAlign: 'center'}}
               >
                 <h3>Total Reward</h3>
-                <p id="usertotalreferralbonus" className="fs-4 fw-bold">
+                <p id="usertotalreferralbonus" className="fs-4 fw-bold" style={{ textAlign: 'center'}}>
                   0.000 BNB
                 </p>
               </div>
@@ -66,10 +66,10 @@ const Referral = () => {
             <div className="col-md-6 mb-3">
               <div
                 className="card shadow-sm p-3"
-                style={{ backgroundColor: cardBgColor, color: cardTextColor }}
+                style={{ backgroundColor: cardBgColor, color: cardTextColor, textAlign: 'center' }}
               >
                 <h3>Total Referral</h3>
-                <p id="countdownline" className="fs-4 fw-bold">
+                <p id="countdownline" className="fs-4 fw-bold" style={{ textAlign: 'center'}}>
                   0
                 </p>
               </div>

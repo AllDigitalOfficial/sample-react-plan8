@@ -2,11 +2,11 @@ import { Container } from "react-bootstrap";
 
 const HeroSection = () => {
   // Get environment variable values
-  const heroBgColor = "transparent"; // Default background color
-  const heroTextColor = "#ffffff"; // Default text color
+  const heroBgColor = import.meta.env.VITE_APP_HERO_BG_COLOR || "transparent"; // Default background color
+  const heroTextColor = import.meta.env.VITE_APP_HERO_TEXT_COLOR || "#ffffff"; // Default text color
   const buttonColor = import.meta.env.VITE_APP_BUTTON_COLOR || "#007bff"; // Default button color
-  const buttonOutlineColor = "#dee2e6"; // Default outline button color
-  const contractBalanceColor = "#ffffff"; // Default contract balance color
+  const buttonOutlineColor = import.meta.env.VITE_APP_BUTTON_OUTLINE_COLOR ||"#dee2e6"; // Default outline button color
+  const contractBalanceColor = import.meta.env.VITE_APP_CONTRACT_BALANCE_COLOR ||"#ffffff"; // Default contract balance color
   const withdrawnColor = import.meta.env.VITE_APP_WITHDRAWN_COLOR || "#ffffff"; // Default withdrawn color
   const presentationLink =
     import.meta.env.VITE_APP_PRESENTATION_LINK || "BNBPUMP.pdf"; // Default presentation link

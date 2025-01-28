@@ -16,8 +16,8 @@ const Levels = () => {
       style={{ backgroundColor: sectionBgColor }}
     >
       <div className="container">
-        <h2 className="mb-4" style={{ color: titleColor }}>
-          
+        <h2 className="mb-4" style={{ color: '#A9A9A9FF' }}>
+          Levels :
         </h2>
         <div className="row">
           {Array.from({ length: 10 }, (_, index) => {
