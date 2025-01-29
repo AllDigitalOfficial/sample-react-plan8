@@ -23,6 +23,9 @@ const App: React.FC = () => {
     if (favicon) {
       favicon.href = import.meta.env.VITE_APP_FAVICON_ICON || "";
     }
+
+    const fontFamily = import.meta.env.VITE_FONT_FAMILY || "Inter, sans-serif";
+    document.body.style.fontFamily = fontFamily;
   }, []);
 
   return (

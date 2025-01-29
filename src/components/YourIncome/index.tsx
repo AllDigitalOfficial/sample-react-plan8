@@ -14,102 +14,90 @@ const initialColors = {
   rateColor: import.meta.env.VITE_APP_RATE_COLOR || "#007bff",
 };
 
+const cardData = [
+  {
+    title: "Your Income",
+    value: "0.000 BNB",
+    color: initialColors.subtextColor,
+    bgColor: initialColors.subbgColor,
+    textColor: initialColors.textColor,
+  },
+  {
+    title: "Referral Amount Available",
+    value: "",
+    color: initialColors.subtextColor,
+    bgColor: initialColors.subbgColor,
+    textColor: initialColors.textColor,
+  },
+  {
+    title: "Total Deposit",
+    value: import.meta.env.VITE_APP_TOTAL_DEPOSIT || "0.000 BNB",
+    color: initialColors.totalDepositColor,
+    bgColor: initialColors.subbgColor,
+    textColor: initialColors.textColor,
+  },
+  {
+    title: "Total Withdrawn",
+    value: import.meta.env.VITE_APP_TOTAL_WITHDRAWN || "0.000 BNB",
+    color: initialColors.totalWithdrawnColor,
+    bgColor: initialColors.subbgColor,
+    textColor: initialColors.textColor,
+  },
+  {
+    title: "Returns",
+    value: import.meta.env.VITE_APP_RETURNS || "0.000 BNB",
+    color: initialColors.returnsColor,
+    bgColor: initialColors.subbgColor,
+    textColor: initialColors.textColor,
+  },
+  {
+    title: "Interest Rate",
+    value: import.meta.env.VITE_APP_INTEREST_RATE || "0.000%",
+    color: initialColors.interestRateColor,
+    bgColor: initialColors.subbgColor,
+    textColor: initialColors.textColor,
+  },
+];
+
 const YourIncome = () => {
   const {
     bgColor,
-    subbgColor,
-    textColor,
-    subtextColor,
-    buttonColor,
-    borderColor,
-    totalDepositColor,
-    totalWithdrawnColor,
-    returnsColor,
-    interestRateColor,
-    rateColor,
   } = initialColors;
 
   return (
     <div className="expart-team-area py-5" style={{ backgroundColor: bgColor }}>
       <div className="container">
         <div className="row">
-          {/* Left Side: One Large Card */}
-          <div className="col-12 mb-4">
-            <div className="card shadow-sm p-4" style={{ backgroundColor: subbgColor }}>
-              <div className="profit-section mb-4">
-                <h2 className="title" style={{ color: textColor, textAlign: 'center' }}>
-                  Your Income
-                </h2>
-                <div className="profit-info">
-                  <p
-                    id="depositUser"
-                    className="fs-4 fw-bold"
-                    style={{ color: subtextColor, textAlign: 'center' }}
-                  >
-                    0.000 <span style={{ color: textColor }}>BNB</span>
+          {cardData.slice(0, 2).map((card, index) => (
+            <div className="col-12 mb-4" key={index}>
+              <div className="card shadow-sm p-4" style={{ backgroundColor: card.bgColor }}>
+                <h4 className="title" style={{ color: card.textColor, textAlign: 'center' }}>
+                  {card.title}
+                </h4>
+                {card.value && (
+                  <p className="fs-4 fw-bold" style={{ color: card.color, textAlign: 'center' }}>
+                    {card.value}
                   </p>
-                </div>
+                )}
               </div>
             </div>
-          </div>
-
-          {/* Referral Amount Section */}
-          <div className="col-12 mb-4">
-            <div className="card shadow-sm p-4" style={{ backgroundColor: subbgColor }}>
-              <div className="referral-section mb-4">
-                <h3 className="title" style={{ color: textColor, textAlign: 'center' }}>
-                  Referral Amount Available
-                </h3>
-                {/* Add more content here if needed */}
+          ))}
+        </div>
+        <div className="row">
+          {cardData.slice(2).map((card, index) => (
+            <div className="col-lg-3 col-md-6 col-12 mb-4" key={index}>
+              <div className="card shadow-sm p-4" style={{ backgroundColor: card.bgColor }}>
+                <h4 className="title" style={{ color: card.textColor, textAlign: 'center' }}>
+                  {card.title}
+                </h4>
+                {card.value && (
+                  <p className="fs-4 fw-bold" style={{ color: card.color, textAlign: 'center' }}>
+                    {card.value}
+                  </p>
+                )}
               </div>
             </div>
-          </div>
-
-          {/* Right Side: Three Small Cards */}
-          <div className="col-12">
-            <div className="row">
-              <div className="col-md-6 mb-4">
-                <div className="card shadow-sm p-4" style={{ backgroundColor: subbgColor }}>
-                  <h4 className="title" style={{ color: textColor, textAlign: 'center' }}>
-                    Total Deposit
-                  </h4>
-                  <p className="fs-4 fw-bold" style={{ color: totalDepositColor, textAlign: 'center' }}>
-                    0.000 BNB
-                  </p>
-                </div>
-              </div>
-              <div className="col-md-6 mb-4">
-                <div className="card shadow-sm p-4" style={{ backgroundColor: subbgColor }}>
-                  <h4 className="title" style={{ color: textColor, textAlign: 'center' }}>
-                    Total Withdrawn
-                  </h4>
-                  <p className="fs-4 fw-bold" style={{ color: totalWithdrawnColor, textAlign: 'center' }}>
-                    0.000 BNB
-                  </p>
-                </div>
-              </div>
-              <div className="col-md-6 mb-4">
-                <div className="card shadow-sm p-4" style={{ backgroundColor: subbgColor }}>
-                  <h4 className="title" style={{ color: textColor, textAlign: 'center' }}>
-                    Returns
-                  </h4>
-                  <p className="fs-4 fw-bold" style={{ color: returnsColor, textAlign: 'center' }}>
-                    0.000 BNB
-                  </p>
-                </div>
-              </div>
-              <div className="col-md-6 mb-4">
-                <div className="card shadow-sm p-4" style={{ backgroundColor: subbgColor }}>
-                  <h4 className="title" style={{ color: textColor, textAlign: 'center' }}>
-                    Interest Rate
-                  </h4>
-                  <p className="fs-4 fw-bold" style={{ color: interestRateColor, textAlign: 'center' }}>
-                    0.000%
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
