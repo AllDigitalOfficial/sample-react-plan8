@@ -8,7 +8,7 @@ const Levels = () => {
   const cardTextColor =
     import.meta.env.VITE_APP_LEVEL_CARD_TEXT_COLOR || "#ffffff";
   const percentageColor =
-    import.meta.env.VITE_APP_LEVEL_PERCENTAGE_COLOR || "#FFFF00FF";
+    import.meta.env.VITE_APP_LEVEL_PERCENTAGE_COLOR || "#FFCC00FF";
 
   return (
     <section
@@ -16,7 +16,7 @@ const Levels = () => {
       style={{ backgroundColor: sectionBgColor }}
     >
       <div className="container">
-        <h2 className="mb-4" style={{ color: '#A9A9A9FF' }}>
+        <h2 className="mb-4" style={{ color: cardTextColor }}>
           Levels :
         </h2>
         <div className="row">
@@ -25,7 +25,7 @@ const Levels = () => {
             const percentage = level === 1 ? "6%" : level === 2 ? "3%" : level === 3 ? "2%" : level === 4 ? "1%" :"0.5%";
 
             return (
-              <div key={level} className="col-md-1 col-lg-2 mb-3">
+              <div key={level} className="col-md-6 col-lg-2 mb-3">
                 <div
                   className="card shadow-sm p-2.8"
                   style={{

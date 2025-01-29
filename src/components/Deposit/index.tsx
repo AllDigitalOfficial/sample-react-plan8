@@ -4,7 +4,7 @@ const Deposit = () => {
   const depositBgColor = import.meta.env.VITE_APP_DEPOSIT_BG_COLOR || "#FFFFFF0B";
   const depositTextColor =
     import.meta.env.VITE_APP_DEPOSIT_TEXT_COLOR || "#ffffff";
-  const buttonColor = import.meta.env.VITE_APP_BUTTON_COLOR || "#007bff";
+  const buttonColor = import.meta.env.VITE_APP_BUTTON_COLOR || "#FF8C00FF";
   const minDeposit = import.meta.env.VITE_APP_MIN_DEPOSIT || 0.05;
   const maxDeposit = import.meta.env.VITE_APP_MAX_DEPOSIT || 1000;
   const perDayIncome = import.meta.env.VITE_APP_DEPOSIT_INCOME || 0.0;
@@ -20,7 +20,7 @@ const Deposit = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-6 col-md-12 mb-4 mb-lg-0">
-            <div className="deposit-content">
+            <div className="deposit-content" style={{ backgroundColor: 'grey', padding: '70px', borderRadius: '20px' }}>
               <div className="section-title mb-3">
                 <h2 style={{ color: depositTextColor, textAlign: 'center', marginBottom: '50px' }}> Make New Deposit</h2>
                 <p></p>
@@ -42,50 +42,52 @@ const Deposit = () => {
                     BNB
                   </span>
                 </div>
-                <button
-                  id="sendTransaction"
-                  className="btn"
-                  style={{
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <button
+                    id="sendTransaction"
+                    className="btn"
+                    style={{
                     backgroundColor: buttonColor,
                     color: "#fff",
-                    width: "100%",
+                    width: "50%",
                     marginBottom: "1rem",
-                  }}
-                >
-                  MAKE DEPOSIT
-                </button>
+                    }}
+                  >
+                    Make Deposit
+                  </button>
+                </div>
                 <div className="limits text-muted">
-                  <h6 style={{color: depositTextColor}}><p> *Minimum {minDeposit} BNB ~ {maxDeposit} BNB</p></h6>
+                  <h6 style={{color: depositTextColor, textAlign: "center"}} ><p> *Minimum {minDeposit} BNB ~ {maxDeposit} BNB</p></h6>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="col-lg-6 col-md-12">
+          <div className="col-lg-6 col-md-12" >
             <div className="summary-cards">
-              <div className="card mb-4 shadow-sm">
-                <div className="card-body text-center">
-                  <h4>Per Day</h4>
-                  <p id="perDayIncome" className="fs-4 fw-bold">
+              <div className="card mb-4 shadow-sm" style={{ backgroundColor: 'transparent' }}>
+                <div className="card-body text-center" >
+                  <h4 style={{ color: buttonColor }}>Per Day</h4>
+                  <p id="perDayIncome" className="fs-4 fw-bold" style={{ color: depositTextColor }}>
                     {perDayIncome} BNB
                   </p>
                 </div>
               </div>
-              <div className="card mb-4 shadow-sm">
+              <div className="card mb-4 shadow-sm" style={{ backgroundColor: 'transparent' }}>
                 <div className="card-body text-center">
-                  <h4>Percent Rate</h4>
-                  <p className="fs-4">
+                  <h4 style={{ color: buttonColor }}>Percent Rate</h4>
+                  <p className="fs-4" style={{ color: depositTextColor }}>
                     <span id="base-percentage">{percentRate}%</span>
                   </p>
                 </div>
               </div>
-              <div className="card shadow-sm">
+              <div className="card shadow-sm" style={{ backgroundColor: 'transparent' }}>
                 <div className="card-body text-center">
-                  <h4>Total Income</h4>
-                  <p id="totalIncome" className="fs-4 fw-bold">
+                  <h4 style={{ color: buttonColor }}>Total Income</h4>
+                  <p id="totalIncome" className="fs-4 fw-bold" style={{ color: depositTextColor }}>
                     {totalIncome} BNB
                   </p>
-                  <small className="text-muted">
+                  <small style={{ color: 'blue' }}>
                     * Withdrawal at any time you want!
                   </small>
                 </div>

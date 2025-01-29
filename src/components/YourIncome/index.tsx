@@ -1,16 +1,18 @@
 const ReferralLinkData = () => {
   // Get environment variable values
   const bgColor = import.meta.env.VITE_APP_REFERRAL_LINK_BG_COLOR || "#FFFFFF0B"; // Default background color
-  const subbgColor = "#FFFFFF33"
+  const subbgColor = import.meta.env.VITE_APP_REFERRAL_LINK_SUB_BG_COLOR ||"transparent";
   const textColor = import.meta.env.VITE_APP_REFERRAL_LINK_TEXT_COLOR || "#ffffff"; // Default text color
-  const buttonColor = import.meta.env.VITE_APP_BUTTON_COLOR || "#007bff"; // Default button color
+  const subtextColor = import.meta.env.VITE_APP_REFERRAL_LINK_SUB_TEXT_COLOR || "#FFCC00FF"; // Default text color
+  const buttonColor = import.meta.env.VITE_APP_BUTTON_COLOR || "#007bff";
+  const BorderColor = import.meta.env.VITE_APP_REFERRAL_LINK_BORDER_COLOR || "transparent"; // Default button color
   const totalDepositColor =
-    import.meta.env.VITE_APP_TOTAL_DEPOSIT_COLOR || "#000000"; // Default color for Total Deposit card
+    import.meta.env.VITE_APP_TOTAL_DEPOSIT_COLOR || "#ffffff"; // Default color for Total Deposit card
   const totalWithdrawnColor =
-    import.meta.env.VITE_APP_TOTAL_WITHDRAWN_COLOR || "#000000"; // Default color for Total Withdrawn card
-  const returnsColor = import.meta.env.VITE_APP_RETURNS_COLOR || "#000000"; // Default color for Returns card
+    import.meta.env.VITE_APP_TOTAL_WITHDRAWN_COLOR || "#ffffff"; // Default color for Total Withdrawn card
+  const returnsColor = import.meta.env.VITE_APP_RETURNS_COLOR || "#ffffff"; // Default color for Returns card
   const interestRateColor =
-    import.meta.env.VITE_APP_INTEREST_RATE_COLOR || "#000000"; // Default color for Interest Rate card
+    import.meta.env.VITE_APP_INTEREST_RATE_COLOR || "#ffffff"; // Default color for Interest Rate card
   const rateColor = import.meta.env.VITE_APP_RATE_COLOR || "#007bff"; // Default color for rate text
   return (
     <div className="expart-team-area py-5" style={{ backgroundColor: bgColor }}>
@@ -27,9 +29,9 @@ const ReferralLinkData = () => {
                   <p
                     id="depositUser"
                     className="fs-4 fw-bold"
-                    style={{ color: '#FFCC00FF', textAlign: 'center' }}
+                    style={{ color: subtextColor, textAlign: 'center' }}
                   >
-                    0.000 <span className="text-muted" style={{ color: '#FFCC00FF'}}>BNB</span>
+                    0.000 <span style={{ color: textColor}}>BNB</span>
                   </p>
                   
                 </div>
@@ -43,10 +45,10 @@ const ReferralLinkData = () => {
                 <div className="referral-info">
                   <p
                     id="userAvailabereferralbonus"
-                    className="fs-4 fw-bold text-muted"
-                    style={{ color: textColor, textAlign: 'center' }}
+                    className="fs-4 fw-bold"
+                    style={{ color: subtextColor, textAlign: 'center' }}
                   >
-                    0.000 <span className="text-muted" style={{ color: '#FFCC00FF'}}>BNB</span>
+                    0.000 <span style={{ color: textColor}}>BNB</span>
                   </p>
                 </div>
               </div>
@@ -59,10 +61,10 @@ const ReferralLinkData = () => {
                 <div className="dividends-info">
                   <p
                     id="userDivident"
-                    className="fs-4 fw-bold text-muted"
-                    style={{ color: textColor, textAlign: 'center' }}
+                    className="fs-4 fw-bold"
+                    style={{ color: subtextColor, textAlign: 'center' }}
                   >
-                    0.000 <span className="text-muted" style ={{color: textColor}}>BNB</span>
+                    0.000 <span style ={{color: textColor}}>BNB</span>
                   </p>
                 </div>
               </div>
@@ -70,9 +72,9 @@ const ReferralLinkData = () => {
                     <button
                       id="withdraw-button"
                       className="btn"
-                      style={{ backgroundColor: buttonColor, color: "#fff", textAlign: 'center' }}
+                      style={{ backgroundColor: subtextColor, color: "#000000", textAlign: 'center', borderRadius: '10px' }}
                       >
-                      Withdrawal
+                      Withdrawl
                     </button>
               </div>
             </div>
@@ -86,7 +88,7 @@ const ReferralLinkData = () => {
               <div className="col">
                 <div
                   className="card shadow-sm p-3"
-                  style={{ borderColor: totalDepositColor }}
+                  style={{ backgroundColor: subbgColor,borderColor: BorderColor }}
                 >
                   <h4 className="title" style={{ color: totalDepositColor, textAlign: 'center' }}>
                     Total Deposit
@@ -107,7 +109,7 @@ const ReferralLinkData = () => {
               <div className="col">
                 <div
                   className="card shadow-sm p-3"
-                  style={{ borderColor: returnsColor }}
+                  style={{ backgroundColor: subbgColor,borderColor: BorderColor }}
                 >
                   <h4 className="title" style={{ color: returnsColor, textAlign: 'center' }}>
                     Your Returns
@@ -128,7 +130,7 @@ const ReferralLinkData = () => {
               <div className="col">
                 <div
                   className="card shadow-sm p-3"
-                  style={{ borderColor: totalWithdrawnColor }}
+                  style={{ backgroundColor: subbgColor,borderColor: BorderColor }}
                 >
                   <h4 className="title" style={{ color: totalWithdrawnColor, textAlign: 'center' }}>
                     Total Withdrawn
@@ -149,7 +151,7 @@ const ReferralLinkData = () => {
               <div className="col">
                 <div
                   className="card shadow-sm p-3"
-                  style={{ borderColor: interestRateColor }}
+                  style={{ backgroundColor: subbgColor,borderColor: BorderColor }}
                 >
                   <h4 className="title" style={{ color: interestRateColor, textAlign: 'center' }}>
                     Interest Rate

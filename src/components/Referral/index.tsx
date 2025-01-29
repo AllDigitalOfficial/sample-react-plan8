@@ -2,10 +2,11 @@ const Referral = () => {
   // Get environment variable values
   const bgColor = import.meta.env.VITE_APP_REFERRAL_BG_COLOR || "#FFFFFF0B"; // Default background color
   const textColor = import.meta.env.VITE_APP_REFERRAL_TEXT_COLOR || "#ffffff"; // Default text color
-  const cardBgColor = import.meta.env.VITE_APP_REFERRAL_CARD_BG_COLOR || "#ffffff"; // Default card background color
+  const cardBgColor = import.meta.env.VITE_APP_REFERRAL_CARD_BG_COLOR || "transparent"; // Default card background color
   const cardTextColor =
-    import.meta.env.VITE_APP_REFERRAL_CARD_TEXT_COLOR || "#000000"; // Default card text color
+    import.meta.env.VITE_APP_REFERRAL_CARD_TEXT_COLOR || "#ffffff"; // Default card text color
   const buttonColor = import.meta.env.VITE_APP_BUTTON_COLOR || "#007bff"; // Default button color
+  const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "#FFCC00FF"; // Default button text color
   const buttonHoverColor =
     import.meta.env.VITE_APP_BUTTON_HOVER_COLOR || "#0056b3"; // Default button hover color
 
@@ -13,7 +14,7 @@ const Referral = () => {
     <div className="roadmap-area py-5" style={{ backgroundColor: bgColor }}>
       <div className="container">
         <div className="referral">
-          <h2 className="mb-4" style={{ color: textColor , textAlign: 'center'}}>
+          <h2 className="mb-4" style={{ color: buttonTextColor , textAlign: 'center'}}>
             Referral
           </h2>
 
@@ -57,8 +58,8 @@ const Referral = () => {
                 style={{ backgroundColor: cardBgColor, color: cardTextColor , textAlign: 'center'}}
               >
                 <h3>Total Reward</h3>
-                <p id="usertotalreferralbonus" className="fs-4 fw-bold" style={{ textAlign: 'center'}}>
-                  0.000 BNB
+                <p id="usertotalreferralbonus" className="fs-4 fw-bold" style={{ textAlign: 'center', color: buttonTextColor }}>
+                  0.000 < span style={{color: cardTextColor}}> BNB </span>
                 </p>
               </div>
             </div>
@@ -69,7 +70,7 @@ const Referral = () => {
                 style={{ backgroundColor: cardBgColor, color: cardTextColor, textAlign: 'center' }}
               >
                 <h3>Total Referral</h3>
-                <p id="countdownline" className="fs-4 fw-bold" style={{ textAlign: 'center'}}>
+                <p id="countdownline" className="fs-4 fw-bold" style={{color: buttonTextColor, textAlign: 'center'}}>
                   0
                 </p>
               </div>

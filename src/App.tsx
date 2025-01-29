@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import ScrollToTopButton from "./components/ScrollToTopButton";
+
 import {
   ContractData,
   HeroSection,
@@ -57,6 +59,9 @@ const App: React.FC = () => {
 
       <div className="col-lg-12 col-md-12 mb-4">
         <Copyright />
+      </div>
+      <div>
+        <ScrollToTopButton />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const HeroSection = () => {
   const heroTextColor = import.meta.env.VITE_APP_HERO_TEXT_COLOR || "#ffffff"; // Default text color
   const buttonColor = import.meta.env.VITE_APP_BUTTON_COLOR || "#007bff"; // Default button color
   const buttonOutlineColor = import.meta.env.VITE_APP_BUTTON_OUTLINE_COLOR ||"#dee2e6"; // Default outline button color
-  const contractBalanceColor = import.meta.env.VITE_APP_CONTRACT_BALANCE_COLOR ||"#ffffff"; // Default contract balance color
+  const contractBalanceColor = import.meta.env.VITE_APP_CONTRACT_BALANCE_COLOR ||"#FFCC00FF"; // Default contract balance color
   const withdrawnColor = import.meta.env.VITE_APP_WITHDRAWN_COLOR || "#ffffff"; // Default withdrawn color
   const presentationLink =
     import.meta.env.VITE_APP_PRESENTATION_LINK || "BNBPUMP.pdf"; // Default presentation link
@@ -75,7 +75,7 @@ const HeroSection = () => {
           </div>
           {/* Below Section:  */}
           <div className="row justify-content-center">
-            <div className="col-10 text-center mb-4">
+            <div className="col-9 text-center mb-4">
               <h1 className="fw-bold" style={{ color: heroTextColor }}>
                 Current Contract Balance
               </h1>
@@ -83,7 +83,7 @@ const HeroSection = () => {
               className="fs-5 fw-bold mt-4"
               style={{ color: contractBalanceColor }}
               >
-                0.000 BNB
+                0.000 <span style ={{color: heroTextColor}}>BNB</span>
               </p>
             </div>
             <p></p>
@@ -96,7 +96,7 @@ const HeroSection = () => {
                 className="fs-5 fw-bold mt-4"
                 style={{ color: contractBalanceColor }}
                 >
-                  0.000 BNB
+                  0.000  <span style ={{color: heroTextColor}}>BNB</span>
                 </p>
               </div>
             </div>
