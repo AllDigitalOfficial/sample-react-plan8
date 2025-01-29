@@ -18,13 +18,13 @@ const Referral = () => {
     // Copy referral link logic here
     toast.success(Linktext, {
       position: "bottom-right",
-      autoClose: 4000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      style: { backgroundColor: NotificationbgColor, color: 'white' },
+      style: { backgroundColor: NotificationbgColor, color: cardTextColor },
     });
   };
 
@@ -32,7 +32,7 @@ const Referral = () => {
     <div className="roadmap-area py-5" style={{ backgroundColor: bgColor }}>
       <div className="container">
         <div className="referral">
-          <h2 className="mb-4" style={{ color: textColor, textAlign: 'center' }}>
+          <h2 className="mb-4" style={{ color: buttonTextColor, textAlign: 'center' }}>
             Referral
           </h2>
 
@@ -65,6 +65,26 @@ const Referral = () => {
             >
               Copy
             </button>
+          </div>
+
+          {/* Total Reward Section */}
+          <div className="card shadow-sm p-4 mb-4" style={{ backgroundColor: cardBgColor }}>
+            <h3 className="title" style={{ color: buttonTextColor, textAlign: 'center' }}>
+              Total Reward
+            </h3>
+            <p className="fs-4 fw-bold" style={{ color: cardTextColor, textAlign: 'center' }}>
+              0.000 BNB
+            </p>
+          </div>
+
+          {/* Total Referral Section */}
+          <div className="card shadow-sm p-4 mb-4" style={{ backgroundColor: cardBgColor }}>
+            <h3 className="title" style={{ color: buttonTextColor, textAlign: 'center' }}>
+              Total Referral
+            </h3>
+            <p className="fs-4 fw-bold" style={{ color: cardTextColor, textAlign: 'center' }}>
+              0
+            </p>
           </div>
         </div>
       </div>

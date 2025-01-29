@@ -10,8 +10,9 @@ const Deposit = () => {
   const perDayIncome = import.meta.env.VITE_APP_DEPOSIT_INCOME || 0.0;
   const percentRate = import.meta.env.VITE_APP_PERCENT_RATE || 0;
   const totalIncome = import.meta.env.VITE_APP_TOTAL_INCOME || 0.0;
+  const textAlert = import.meta.env.VITE_APP_TEXT_ALERT || "Please install MetaMask or another Ethereum wallet extension to proceed.";
   const handleDepositClick = () => {
-    alert('Please install MetaMask or another Ethereum wallet extension to proceed.');
+    alert( textAlert );
   };
 
   return (
