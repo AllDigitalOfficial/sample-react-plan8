@@ -26,65 +26,65 @@ const Navbars = () => {
               alt="Logo"
               src={import.meta.env.VITE_APP_LOGO || "BNBPUMP-LOGO.png"}
               className="img-fluid"
-              style={{ width: "225px", height: "auto", marginLeft: "72px", alignSelf: "right" }}
+              style={{ width: "250px", height: "auto", marginLeft: "72px", alignSelf: "right" }}
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ backgroundColor: navbarTextColor }}>
-            <span className="navbar-toggler-icon"></span>
-          </Navbar.Toggle>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto d-flex align-items-center flex-wrap">
-              <Button
-                variant="outline-light"
-                className="me-6 mb-3 btn-responsive"
-                style={{
-                  backgroundColor: buttonBgColor,
-                  color: buttonTextColor,
-                  borderColor: buttonBorderColor,
-                  marginLeft: "10px",
-                  borderRadius: '20px',
-                  padding: '10px 20px', // Increase padding
-                  fontSize: '1.1rem',
-                }}
-                onClick={() =>
-                  window.open(import.meta.env.VITE_SMART_CONTRACT || "https://bscscan.com/address/0x1510930bc9959cc4163be0b8503636161c81d014#code", "_blank")
-                }
-              >
-                Smart Contract {import.meta.env.VITE_SMART_CONTRACT}
-              </Button>
-              <Button
-                variant="outline-light"
-                className="me-6 mb-3 btn-responsive"
-                style={{
-                  backgroundColor: buttonBgColor,
-                  color: buttonTextColor,
-                  borderColor: buttonBorderColor,
-                  marginLeft: "10px",
-                  borderRadius: '20px',
-                  padding: '10px 20px', // Increase padding
-                  fontSize: '1.1rem',
-                }}
-              >
-                Connect Wallet
-              </Button>
-            </Nav>
-          </Navbar.Collapse>
+          <Nav className="ms-auto d-flex align-items-center flex-wrap nav-buttons">
+            <Button
+              variant="outline-light"
+              className="me-5 mb-3 btn-responsive"
+              style={{
+                backgroundColor: buttonBgColor,
+                color: buttonTextColor,
+                borderColor: buttonBorderColor,
+                borderRadius: '20px',
+                padding: '10px 10px', // Increase padding
+                fontSize: '1rem' // Increase font size
+              }}
+              onClick={() =>
+                window.open(import.meta.env.VITE_SMART_CONTRACT || "https://bscscan.com/address/0x1510930bc9959cc4163be0b8503636161c81d014#code", "_blank")
+              }
+            >
+              Smart Contract {import.meta.env.VITE_SMART_CONTRACT}
+            </Button>
+            <Button
+              variant="outline-light"
+              className="me-5 mb-3 btn-responsive"
+              style={{
+                backgroundColor: buttonBgColor,
+                color: buttonTextColor,
+                borderColor: buttonBorderColor,
+                borderRadius: '20px',
+                padding: '10px 10px', // Increase padding
+                fontSize: '1rem' // Increase font size
+              }}
+            >
+              Connect Wallet
+            </Button>
+          </Nav>
         </Container>
       </Navbar>
 
       {/* Internal CSS for Button Responsiveness */}
       <style>{`
-        /* For extra large screens */
-        @media (min-width: 1200px) {
-          .btn-responsive {
-            width: auto;
-          }
+        .nav-buttons {
+          display: flex;
+          flex-direction: row;
         }
 
-        /* For smaller screens */
-        @media (max-width: 300px) {
+        .btn-responsive {
+          width: 150px;
+        }
+
+        @media (max-width: 250px) {
+          .nav-buttons {
+            flex-direction: column;
+            align-items: center;
+          }
+
           .btn-responsive {
             width: 100%;
+            margin-bottom: 10px;
           }
         }
       `}</style>

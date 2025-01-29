@@ -10,7 +10,10 @@ const HeroSection = () => {
   const withdrawnColor = import.meta.env.VITE_APP_WITHDRAWN_COLOR || "#ffffff"; // Default withdrawn color
   const presentationLink =
     import.meta.env.VITE_APP_PRESENTATION_LINK || "BNBPUMP.pdf"; // Default presentation link
-  //const depositLink = import.meta.env.VITE_APP_DEPOSIT_LINK || "#deposit"; 
+  const depositLink = import.meta.env.VITE_APP_DEPOSIT_LINK || "#deposit";
+  const basicinterestrate = import.meta.env.VITE_APP_BASIC_INTEREST_RATE || "1.5% every 24 hrs"; // Default basic interest rate 
+  const personalholdbonus = import.meta.env.VITE_APP_PERSONAL_HOLD_BONUS || "+0.1% for every 24 hrs without withdrawal"; // Default personal hold bonus
+  const contracttotalamount = import.meta.env.VITE_APP_CONTRACT_TOTAL_AMOUNT || "0.1% for every 500 BNB on platform address balance"; // Default contract total amount bonus
 
   return (
     <Container style={{ backgroundColor: heroBgColor, color: heroTextColor }}>
@@ -24,19 +27,19 @@ const HeroSection = () => {
               </h4>
               <div>
                 <p className="mb-3">
-                  <span>Basic interest rate :</span>
-                  <span style={{ color: "#ffffff" }}>1.5% every 24 hrs</span>
+                  <span>Basic interest rate : </span>
+                  <span style={{ color: "#ffffff" }}>{basicinterestrate}</span>
                 </p>
                 <p className="mb-3">
-                  <span>Personal hold-bonus:</span>
+                  <span>Personal hold-bonus: </span>
                   <span style={{ color: "#ffffff" }}>
-                    +0.1% for every 24 hrs without withdrawal
+                    {personalholdbonus}
                   </span>
                 </p>
                 <p className="mb-3">
-                  <span>Contract total amount bonus:</span>
+                  <span>Contract total amount bonus : </span>
                   <span style={{ color: "#ffffff" }}>
-                    +0.1% for every 500 BNB on platform address balance
+                    {contracttotalamount}
                   </span>
                 </p>
               </div>
@@ -50,13 +53,13 @@ const HeroSection = () => {
                 >
                   Presentation
                 </a>
-                {/*<a
+                {<a
                   href={depositLink}
                   className="btn"
                   style={{ backgroundColor: buttonColor, color: "#fff" }}
                 >
                   Deposit
-                </a>*/}
+                </a>}
               </div>
             </div>
           </div>

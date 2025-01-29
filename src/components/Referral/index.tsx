@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 const Referral = () => {
   // Get environment variable values
   const bgColor = import.meta.env.VITE_APP_REFERRAL_BG_COLOR || "#FFFFFF0B"; // Default background color
@@ -9,7 +11,14 @@ const Referral = () => {
   const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "#FFCC00FF"; // Default button text color
   const buttonHoverColor =
     import.meta.env.VITE_APP_BUTTON_HOVER_COLOR || "#0056b3"; // Default button hover color
-
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const handleCopyClick = () => {
+    // Copy referral link logic here
+    setShowConfirmation(true);
+    setTimeout(() => {
+      setShowConfirmation(false);
+    }, 2000); // Hide confirmation after 3 seconds
+  };
   return (
     <div className="roadmap-area py-5" style={{ backgroundColor: bgColor }}>
       <div className="container">
@@ -45,9 +54,26 @@ const Referral = () => {
                   "transparent";
                 (e.target as HTMLButtonElement).style.color = "#FFCC00FF";
               }}
+              onClick={handleCopyClick}
             >
               Copy
             </button>
+            {showConfirmation && (
+        <div
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          backgroundColor: 'green',
+          color: 'white',
+          padding: '10px',
+          borderRadius: '5px',
+          zIndex: 3000,
+        }}
+        >
+          Link copied to clipboard! 
+        </div>
+      )}
           </div>
 
           {/* Referral Stats Section */}

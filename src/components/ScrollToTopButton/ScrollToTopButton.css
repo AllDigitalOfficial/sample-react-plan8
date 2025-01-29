@@ -6,15 +6,15 @@
 }
 
 .scroll-button {
-  background-color: #007bff;
-  border: none;
+  background-color: #0056b3;
+  border: #f1f2f4;
   color: white;
-  width: 50px; /* Set width */
-  height: 50px; /* Set height */
+  width: 30px; /* Set width */
+  height: 30px; /* Set height */
   border-radius: 10%; /* Adjust border-radius for square shape */
   cursor: pointer;
   font-size: 24px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(165, 127, 245, 0.2);
 }
 
 .scroll-button:hover {

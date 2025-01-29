@@ -10,6 +10,9 @@ const Deposit = () => {
   const perDayIncome = import.meta.env.VITE_APP_DEPOSIT_INCOME || 0.0;
   const percentRate = import.meta.env.VITE_APP_PERCENT_RATE || 0;
   const totalIncome = import.meta.env.VITE_APP_TOTAL_INCOME || 0.0;
+  const handleDepositClick = () => {
+    alert('Please install MetaMask or another Ethereum wallet extension to proceed.');
+  };
 
   return (
     <div
@@ -52,12 +55,13 @@ const Deposit = () => {
                     width: "50%",
                     marginBottom: "1rem",
                     }}
+                    onClick={handleDepositClick}
                   >
                     Make Deposit
                   </button>
                 </div>
                 <div className="limits text-muted">
-                  <h6 style={{color: depositTextColor, textAlign: "center"}} ><p> *Minimum {minDeposit} BNB ~ {maxDeposit} BNB</p></h6>
+                  <h6 style={{color: depositTextColor, textAlign: "center"}} ><p> *Minimum {minDeposit} BNB ~ Maximum {maxDeposit} BNB</p></h6>
                 </div>
               </div>
             </div>
@@ -76,7 +80,7 @@ const Deposit = () => {
               <div className="card mb-4 shadow-sm" style={{ backgroundColor: 'transparent' }}>
                 <div className="card-body text-center">
                   <h4 style={{ color: buttonColor }}>Percent Rate</h4>
-                  <p className="fs-4" style={{ color: depositTextColor }}>
+                  <p className="fs-4 fw-bold" style={{ color: depositTextColor }}>
                     <span id="base-percentage">{percentRate}%</span>
                   </p>
                 </div>
@@ -87,7 +91,7 @@ const Deposit = () => {
                   <p id="totalIncome" className="fs-4 fw-bold" style={{ color: depositTextColor }}>
                     {totalIncome} BNB
                   </p>
-                  <small style={{ color: 'blue' }}>
+                  <small style={{ color: depositTextColor }}>
                     * Withdrawal at any time you want!
                   </small>
                 </div>
