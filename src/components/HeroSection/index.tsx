@@ -16,7 +16,7 @@ const HeroSection = () => {
   const contractTotalAmount = import.meta.env.VITE_APP_CONTRACT_TOTAL_AMOUNT || "0.1% for every 500 BNB on platform address balance"; // Default contract total amount bonus
 
   return (
-    <Container style={{ backgroundColor: heroBgColor, color: heroTextColor }}>
+    <Container style={{ backgroundColor: heroBgColor, color: heroTextColor, paddingTop: '180px' }}> {/* Adjust paddingTop as needed */}
       <Container>
         <div className="row align-items-stretch g-6">
           {/* Left Section: Profit Info */}
@@ -49,19 +49,31 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn"
-                  style={{ backgroundColor: buttonColor, color: "#fff" }}
-                >
+                  style={{
+                    backgroundColor: buttonColor,
+                    color: "#fff",
+                    borderColor: buttonOutlineColor,
+                    borderRadius: '20px',
+                    padding: '10px 10px', // Increase padding
+                    fontSize: '1rem' // Increase font size
+                  }}                >
                   Presentation
                 </a>
-                {<a
+                <a
                   href={smartContractLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn"
-                  style={{ backgroundColor: buttonColor, color: "#fff" }}
-                >
+                  style={{
+                    backgroundColor: buttonColor,
+                    color: "#fff",
+                    borderColor: buttonOutlineColor,
+                    borderRadius: '20px',
+                    padding: '10px 10px', // Increase padding
+                    fontSize: '1rem' // Increase font size
+                  }}                >
                   Smart Contract
-                </a>}
+                </a>
               </div>
             </div>
           </div>

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import ScrollToTopButton from "./components/ScrollToTopButton";
 
 import {
   ContractData,
@@ -12,6 +11,7 @@ import {
   Navbars,
   Referral,
   ReferralLinkData,
+  ScrollToTopButton,
 } from "./components";
 
 const App: React.FC = () => {
