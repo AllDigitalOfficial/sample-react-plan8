@@ -26,7 +26,7 @@ const Navbars = () => {
               alt="Logo"
               src={import.meta.env.VITE_APP_LOGO || "BNBPUMP-LOGO.png"}
               className="img-fluid"
-              style={{ width: "250px", height: "auto", marginLeft: "40px", alignSelf: "right" }}
+              style={{ width: "250px", height: "auto", marginLeft: "72px", alignSelf: "right" }}
             />
           </Navbar.Brand>
           <Nav className="ms-auto d-flex align-items-center flex-wrap nav-buttons">
@@ -76,9 +76,9 @@ const Navbars = () => {
           width: 150px;
         }
 
-        @media (max-width: 360px) {
+        @media (max-width: 250px) {
           .nav-buttons {
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
           }
 
