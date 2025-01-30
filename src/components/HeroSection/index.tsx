@@ -10,7 +10,7 @@ const HeroSection = () => {
   const withdrawnColor = import.meta.env.VITE_APP_WITHDRAWN_COLOR || "#ffffff"; // Default withdrawn color
   const presentationLink =
     import.meta.env.VITE_APP_PRESENTATION_LINK || "BNBPUMP.pdf"; // Default presentation link
-  const depositLink = import.meta.env.VITE_APP_DEPOSIT_LINK || "#deposit";
+  const smartContractLink = import.meta.env.VITE_APP_SMART_CONTRACT || "https://bscscan.com/address/0x1510930bc9959cc4163be0b8503636161c81d014#code" ;
   const basicInterestRate = import.meta.env.VITE_APP_BASIC_INTEREST_RATE || "1.5% every 24 hrs"; // Default basic interest rate 
   const personalHoldBonus = import.meta.env.VITE_APP_PERSONAL_HOLD_BONUS || "+0.1% for every 24 hrs without withdrawal"; // Default personal hold bonus
   const contractTotalAmount = import.meta.env.VITE_APP_CONTRACT_TOTAL_AMOUNT || "0.1% for every 500 BNB on platform address balance"; // Default contract total amount bonus
@@ -54,11 +54,13 @@ const HeroSection = () => {
                   Presentation
                 </a>
                 {<a
-                  href={depositLink}
+                  href={smartContractLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn"
                   style={{ backgroundColor: buttonColor, color: "#fff" }}
                 >
-                  Deposit
+                  Smart Contract
                 </a>}
               </div>
             </div>

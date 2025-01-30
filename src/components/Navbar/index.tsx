@@ -7,6 +7,7 @@ const Navbars = () => {
   const buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "#000033FF"; // Blackish blue
   const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "#ffffff"; // Default to white
   const buttonBorderColor = import.meta.env.VITE_APP_BUTTON_BORDER_COLOR || "#ffffff"; // Default to white
+  const depositLink = import.meta.env.VITE_APP_DEPOSIT_LINK || "#deposit";
 
   return (
     <>
@@ -41,10 +42,10 @@ const Navbars = () => {
                 fontSize: '1rem' // Increase font size
               }}
               onClick={() =>
-                window.open(import.meta.env.VITE_SMART_CONTRACT || "https://bscscan.com/address/0x1510930bc9959cc4163be0b8503636161c81d014#code", "_blank")
+                window.location.href = depositLink
               }
             >
-              Smart Contract {import.meta.env.VITE_SMART_CONTRACT}
+              Deposit
             </Button>
             <Button
               variant="outline-light"
