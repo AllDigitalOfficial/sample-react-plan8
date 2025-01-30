@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-
 import {
   ContractData,
   HeroSection,
@@ -15,7 +13,8 @@ import {
 } from "./components";
 
 const App: React.FC = () => {
-  const scrollToTopButtonBgColor = import.meta.env.VITE_APP_SCROLL_TO_TOP_BUTTON_BG_COLOR || 'rgb(25, 35, 55)';
+  const scrollToTopButtonBgColor =
+    import.meta.env.VITE_APP_SCROLL_TO_TOP_BUTTON_BG_COLOR || "rgb(25, 35, 55)";
 
   useEffect(() => {
     document.title = import.meta.env.VITE_APP_TITLE || "BnbPump";
@@ -28,8 +27,11 @@ const App: React.FC = () => {
 
     const fontFamily = import.meta.env.VITE_FONT_FAMILY || "Inter, sans-serif";
     document.body.style.fontFamily = fontFamily;
-    const backgroundImageUrl = import.meta.env.VITE_APP_BACKGROUND_IMAGE_URL || '/background.jpg';
+    const backgroundColor = import.meta.env.VITE_APP_BACKGROUND_COLOR || "#003153";
+    const backgroundImageUrl =
+      import.meta.env.VITE_APP_BACKGROUND_IMAGE_URL || "";
     document.body.style.backgroundImage = `url(${backgroundImageUrl})`;
+    document.body.style.backgroundColor = backgroundColor;
   }, []);
 
   return (

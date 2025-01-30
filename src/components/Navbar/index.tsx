@@ -32,7 +32,7 @@ const Navbars = () => {
                 alt="Logo"
                 src={import.meta.env.VITE_APP_LOGO || "BNBPUMP-LOGO.png"}
                 className="img-fluid"
-                style={{ width: "250px", height: "auto", marginLeft: "72px", alignSelf: "right" }}
+                width={150}
               />
             </Navbar.Brand>
           </Col>
@@ -43,30 +43,26 @@ const Navbars = () => {
             lg={6}
             className="d-flex justify-content-center justify-content-lg-end"
           >
-            <Nav className="w-100 d-flex justify-content-between" style={{ gap: "0.45rem" }}>
+            <Nav className="w-100 d-flex justify-content-between">
               <Button
-                className="btn w-100 w-lg-auto ms-2"
+                className="btn w-50 ms-2"
                 style={{
                   backgroundColor: buttonBgColor,
                   color: buttonTextColor,
                   borderColor: buttonBorderColor,
                   borderRadius: '20px',
-                  padding: '10px 10px', // Increase padding
-                  fontSize: '1rem' // Increase font size
                 }}
                 onClick={() => (window.location.href = depositLink)}
               >
-                DEPOSIT
+                Deposit
               </Button>
               <Button
-                className="btn w-100 w-lg-auto ms-2"
+                className="btn w-50 ms-2"
                 style={{
                   backgroundColor: buttonBgColor,
                   color: buttonTextColor,
                   borderColor: buttonBorderColor,
                   borderRadius: '20px',
-                  padding: '10px 10px', // Increase padding
-                  fontSize: '1rem' // Increase font size
                 }}
               >
                 Connect Wallet
