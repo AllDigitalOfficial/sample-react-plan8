@@ -1,8 +1,8 @@
-.Button {
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-.Button:hover {
-    background-color: #0056b3; /* Change to desired hover background color */
-    color: #ffffff; /* Change to desired hover text color */
-  }
+.navbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.sticky-top {
+  background-color: rgba(52, 58, 64, 0.9); /* Slightly transparent background */
+  box-shadow: 0 4px 6px rgba(11, 1, 45, 0.1); /* Add shadow for highlight */
+}

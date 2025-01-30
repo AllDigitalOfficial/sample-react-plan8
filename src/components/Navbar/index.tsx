@@ -2,7 +2,7 @@ import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import "./Navbar.css";
 
 const Navbars = () => {
-  const navbarBgColor = import.meta.env.VITE_APP_NAVBAR_BG_COLOR || "#343a40"; // Default to dark
+  const navbarBgColor = import.meta.env.VITE_APP_NAVBAR_BG_COLOR || "#4B4B4BFF"; // Default to dark
 
   const buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "#000033FF"; // Blackish blue
   const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "#ffffff"; // Default to white
@@ -12,10 +12,10 @@ const Navbars = () => {
   return (
     <>
       <Navbar
-        bg="transparent"
+        bg="navbarBgColor"
         variant="transparent"
         expand="lg"
-        className="py-3"
+        className="py-3 sticky-top"
         style={{
           backgroundColor: navbarBgColor,
         }}
@@ -26,7 +26,7 @@ const Navbars = () => {
               alt="Logo"
               src={import.meta.env.VITE_APP_LOGO || "BNBPUMP-LOGO.png"}
               className="img-fluid"
-              style={{ width: "250px", height: "auto", marginLeft: "72px", alignSelf: "right" }}
+              style={{ width: "250px", height: "auto", marginLeft: "40px", alignSelf: "right" }}
             />
           </Navbar.Brand>
           <Nav className="ms-auto d-flex align-items-center flex-wrap nav-buttons">
@@ -76,9 +76,9 @@ const Navbars = () => {
           width: 150px;
         }
 
-        @media (max-width: 250px) {
+        @media (max-width: 360px) {
           .nav-buttons {
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
           }
 

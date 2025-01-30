@@ -43,7 +43,7 @@ const HeroSection = () => {
                   </span>
                 </p>
               </div>
-              <div className="d-flex gap-3 mt-4 justify-content-center">
+              <div className="d-flex gap-1 mt-3 justify-content-center">
                 <a
                   href={presentationLink}
                   target="_blank"
