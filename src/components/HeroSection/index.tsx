@@ -11,9 +11,9 @@ const HeroSection = () => {
   const presentationLink =
     import.meta.env.VITE_APP_PRESENTATION_LINK || "BNBPUMP.pdf"; // Default presentation link
   const depositLink = import.meta.env.VITE_APP_DEPOSIT_LINK || "#deposit";
-  const basicinterestrate = import.meta.env.VITE_APP_BASIC_INTEREST_RATE || "1.5% every 24 hrs"; // Default basic interest rate 
-  const personalholdbonus = import.meta.env.VITE_APP_PERSONAL_HOLD_BONUS || "+0.1% for every 24 hrs without withdrawal"; // Default personal hold bonus
-  const contracttotalamount = import.meta.env.VITE_APP_CONTRACT_TOTAL_AMOUNT || "0.1% for every 500 BNB on platform address balance"; // Default contract total amount bonus
+  const basicInterestRate = import.meta.env.VITE_APP_BASIC_INTEREST_RATE || "1.5% every 24 hrs"; // Default basic interest rate 
+  const personalHoldBonus = import.meta.env.VITE_APP_PERSONAL_HOLD_BONUS || "+0.1% for every 24 hrs without withdrawal"; // Default personal hold bonus
+  const contractTotalAmount = import.meta.env.VITE_APP_CONTRACT_TOTAL_AMOUNT || "0.1% for every 500 BNB on platform address balance"; // Default contract total amount bonus
 
   return (
     <Container style={{ backgroundColor: heroBgColor, color: heroTextColor }}>
@@ -28,18 +28,18 @@ const HeroSection = () => {
               <div>
                 <p className="mb-3">
                   <span>Basic interest rate : </span>
-                  <span style={{ color: "#ffffff" }}>{basicinterestrate}</span>
+                  <span style={{ color: "#ffffff" }}>{basicInterestRate}</span>
                 </p>
                 <p className="mb-3">
                   <span>Personal hold-bonus: </span>
                   <span style={{ color: "#ffffff" }}>
-                    {personalholdbonus}
+                    {personalHoldBonus}
                   </span>
                 </p>
                 <p className="mb-3">
                   <span>Contract total amount bonus : </span>
                   <span style={{ color: "#ffffff" }}>
-                    {contracttotalamount}
+                    {contractTotalAmount}
                   </span>
                 </p>
               </div>

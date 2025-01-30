@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
+import { Toast, ToastContainer, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Referral = () => {
   // Get environment variable values
@@ -10,22 +10,17 @@ const Referral = () => {
   const NotificationbgColor = import.meta.env.VITE_APP_NOTIFICATION_BG_COLOR || "#008000FF"; // Default notification background color
   const Linktext = import.meta.env.VITE_APP_LINK_TEXT || "Link copied to clipboard!"; // Default notification background color
   const cardTextColor = import.meta.env.VITE_APP_REFERRAL_CARD_TEXT_COLOR || "#ffffff"; // Default card text color
-  const buttonColor = import.meta.env.VITE_APP_BUTTON_COLOR || "#007bff"; // Default button color
   const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "#FFCC00FF"; // Default button text color
   const buttonHoverColor = import.meta.env.VITE_APP_BUTTON_HOVER_COLOR || "#0056b3"; // Default button hover color
 
+  const [showToast, setShowToast] = useState(false);
+
   const handleCopyClick = () => {
     // Copy referral link logic here
-    toast.success(Linktext, {
-      position: "bottom-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      style: { backgroundColor: NotificationbgColor, color: cardTextColor },
-    });
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000); // Hide toast after 3 seconds
   };
 
   return (
@@ -45,9 +40,10 @@ const Referral = () => {
             >
               <h6 style={{ color: '#ffffff' }}>You will get your ref link after investing...</h6>
             </span>
-            <button
+            <Button
               id="copyButton"
-              className="btn btn-outline-primary ms-3"
+              variant="outline-primary"
+              className="ms-3"
               style={{
                 borderColor: '#FFCC00FF',
                 color: '#FFCC00FF',
@@ -64,7 +60,7 @@ const Referral = () => {
               onClick={handleCopyClick}
             >
               Copy
-            </button>
+            </Button>
           </div>
 
           {/* Total Reward Section */}
@@ -88,7 +84,13 @@ const Referral = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
+      <ToastContainer className="p-3 position-fixed bottom-0 end-0">
+        <Toast show={showToast} onClose={() => setShowToast(false)} delay={3000} autohide style={{ width: '250px', height: '40px' }}>
+          <Toast.Body style={{ backgroundColor: NotificationbgColor, color: textColor, display: 'flex' }}>
+            {Linktext}
+          </Toast.Body>
+        </Toast>
+      </ToastContainer>
     </div>
   );
 };

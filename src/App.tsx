@@ -6,7 +6,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 import {
   ContractData,
   HeroSection,
-  Copyright,
+  Footer,
   Deposit,
   Levels,
   Navbars,
@@ -15,6 +15,8 @@ import {
 } from "./components";
 
 const App: React.FC = () => {
+  const scrollToTopButtonBgColor = import.meta.env.VITE_APP_SCROLL_TO_TOP_BUTTON_BG_COLOR || 'rgb(25, 35, 55)';
+
   useEffect(() => {
     document.title = import.meta.env.VITE_APP_TITLE || "BnbPump";
     const favicon = document.querySelector(
@@ -26,6 +28,8 @@ const App: React.FC = () => {
 
     const fontFamily = import.meta.env.VITE_FONT_FAMILY || "Inter, sans-serif";
     document.body.style.fontFamily = fontFamily;
+    const backgroundImageUrl = import.meta.env.VITE_APP_BACKGROUND_IMAGE_URL || '/background.jpg';
+    document.body.style.backgroundImage = `url(${backgroundImageUrl})`;
   }, []);
 
   return (
@@ -61,10 +65,10 @@ const App: React.FC = () => {
       </div>
 
       <div className="col-lg-12 col-md-12 mb-4">
-        <Copyright />
+        <Footer />
       </div>
       <div>
-        <ScrollToTopButton />
+        <ScrollToTopButton bgColor={scrollToTopButtonBgColor} />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
-import React from "react";
+
 import { Button } from "react-bootstrap";
+import { getCardDataYourIncome } from "../../utils/utils_Components.ts";
 
 const initialColors = {
   bgColor: import.meta.env.VITE_APP_REFERRAL_LINK_BG_COLOR || "#FFFFFF0B",
@@ -47,37 +48,16 @@ const columnCardData = [
 ];
 
 const rowCardData = [
-  {
-    title: "Total Deposit",
-    value: import.meta.env.VITE_APP_TOTAL_DEPOSIT || "0.000 BNB",
-    color: initialColors.totalDepositColor,
-    bgColor: initialColors.subbgColor,
-    textColor: initialColors.textColor,
-  },
-  {
-    title: "Total Withdrawn",
-    value: import.meta.env.VITE_APP_TOTAL_WITHDRAWN || "0.000 BNB",
-    color: initialColors.totalWithdrawnColor,
-    bgColor: initialColors.subbgColor,
-    textColor: initialColors.textColor,
-  },
-  {
-    title: "Returns",
-    value: import.meta.env.VITE_APP_RETURNS || "0.000 BNB",
-    color: initialColors.returnsColor,
-    bgColor: initialColors.subbgColor,
-    textColor: initialColors.textColor,
-  },
-  {
-    title: "Interest Rate",
-    value: import.meta.env.VITE_APP_INTEREST_RATE || "0.000%",
-    color: initialColors.interestRateColor,
-    bgColor: initialColors.subbgColor,
-    textColor: initialColors.textColor,
-  },
+  { id: 'userDeposits', title: 'User Deposits', value: '0.000 BNB', color: initialColors.totalDepositColor, bgColor: initialColors.bgColor, textColor: initialColors.textColor },
+  { id: 'profit', title: 'Profit', value: '0.000 BNB', color: initialColors.returnsColor, bgColor: initialColors.bgColor, textColor: initialColors.textColor },
+  { id: 'totalUserTotalWithdrawn', title: 'Total Withdrawn', value: '0.000 BNB', color: initialColors.totalWithdrawnColor, bgColor: initialColors.bgColor, textColor: initialColors.textColor },
+  { id: 'interestRate', title: 'Interest Rate', value: '0.000 BNB', color: initialColors.interestRateColor, bgColor: initialColors.bgColor, textColor: initialColors.textColor },
 ];
 
+const cardData = rowCardData;
 const YourIncome = () => {
+  const data = {}; // Define the data variable
+  const cards = getCardDataYourIncome(data);
   const {
     bgColor,
   } = initialColors;
@@ -123,7 +103,7 @@ const YourIncome = () => {
           ))}
         </div>
         <div className="row">
-          {rowCardData.map((card, index) => (
+          {cardData.map((card: { title: string; value: string; color: string; bgColor: string; textColor: string }, index: number) => (
             <div className="col-lg-3 col-md-6 col-12 mb-4" key={index}>
               <div className="card shadow-sm p-4" style={{ backgroundColor: card.bgColor }}>
                 <h4 className="title" style={{ color: card.textColor, textAlign: 'center' }}>

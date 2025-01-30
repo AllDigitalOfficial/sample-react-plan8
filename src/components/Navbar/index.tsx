@@ -3,7 +3,6 @@ import "./Navbar.css";
 
 const Navbars = () => {
   const navbarBgColor = import.meta.env.VITE_APP_NAVBAR_BG_COLOR || "#343a40"; // Default to dark
-  const navbarTextColor = import.meta.env.VITE_APP_NAVBAR_TEXT_COLOR || "#ffffff"; // Default to white
 
   const buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "#000033FF"; // Blackish blue
   const buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "#ffffff"; // Default to white

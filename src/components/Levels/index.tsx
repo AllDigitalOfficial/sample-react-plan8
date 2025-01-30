@@ -3,7 +3,6 @@ const Levels = () => {
   // Get environment variable values
   const sectionBgColor =
     import.meta.env.VITE_APP_LEVELS_SECTION_BG_COLOR || "#FFFFFF0B";
-  const titleColor = import.meta.env.VITE_APP_LEVELS_TITLE_COLOR || "#000000";
   const cardBgColor = import.meta.env.VITE_APP_LEVEL_CARD_BG_COLOR || "#FFFFFF33";
   const cardTextColor =
     import.meta.env.VITE_APP_LEVEL_CARD_TEXT_COLOR || "#ffffff";
