@@ -2,6 +2,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { getCardDataContractData } from "../../utils/utils_Components.ts";
+import './ContractData.css';
 
 const ContractData: React.FC = () => {
   // Sample data object
@@ -25,7 +26,7 @@ const ContractData: React.FC = () => {
         {cards.map((card) => (
           <Col key={card.id}>
             <div
-              className="card p-4 text-center shadow-sm h-100"
+              className="card p-4 text-center shadow border h-80"
               style={{
                 backgroundColor: cardBgColor,
                 borderColor: cardBorderColor,

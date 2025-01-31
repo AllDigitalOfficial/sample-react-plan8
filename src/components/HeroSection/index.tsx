@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-
+import "./heroSection.css";
 const HeroSection = () => {
   // Get environment variable values
   const heroBgColor = import.meta.env.VITE_APP_HERO_BG_COLOR || "transparent"; // Default background color
@@ -67,33 +67,33 @@ const HeroSection = () => {
                 </p>
               </div>
               <div className="d-md-flex justify-content-center gap-3">
-                <a
-                  href={presentationLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-lg  mt-3"
-                  style={{
-                    backgroundColor: buttonColor,
-                    color: "#fff",
-                    borderColor: buttonOutlineColor,
-                  }}
-                >
-                  Presentation
-                </a>
-                <a
-                  href={smartContractLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-lg  mt-3"
-                  style={{
-                    backgroundColor: buttonColor,
-                    color: "#fff",
-                    borderColor: buttonOutlineColor,
-                  }}
-                >
-                  Smart Contract
-                </a>
-              </div>
+  <a
+    href={presentationLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn btn-lg mt-3 button-link"
+    style={{
+      backgroundColor: buttonColor,
+      color: "#fff",
+      borderColor: buttonOutlineColor,
+    }}
+  >
+    Presentation
+  </a>
+  <a
+    href={smartContractLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn btn-lg mt-3 button-link"
+    style={{
+      backgroundColor: buttonColor,
+      color: "#fff",
+      borderColor: buttonOutlineColor,
+    }}
+  >
+    Smart Contract
+  </a>
+</div>
             </div>
           </div>
 
