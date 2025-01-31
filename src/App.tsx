@@ -27,7 +27,7 @@ const App: React.FC = () => {
 
     const fontFamily = import.meta.env.VITE_FONT_FAMILY || "Inter, sans-serif";
     document.body.style.fontFamily = fontFamily;
-    const backgroundColor = import.meta.env.VITE_APP_BACKGROUND_COLOR || "#003153";
+    const backgroundColor = import.meta.env.VITE_APP_BACKGROUND_COLOR || "#125062";
     const backgroundImageUrl =
       import.meta.env.VITE_APP_BACKGROUND_IMAGE_URL || "";
     document.body.style.backgroundImage = `url(${backgroundImageUrl})`;

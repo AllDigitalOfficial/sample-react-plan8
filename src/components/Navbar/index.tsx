@@ -2,7 +2,7 @@ import { Navbar, Container, Nav, Button, Row, Col } from "react-bootstrap";
 
 const Navbars = () => {
   const {
-    navbarBgColor = import.meta.env.VITE_APP_NAVBAR_BG_COLOR || "#4B4B4BFF",
+    navbarBgColor = import.meta.env.VITE_APP_NAVBAR_BG_COLOR || "#0B262D",
     buttonBgColor = import.meta.env.VITE_APP_BUTTON_BG_COLOR || "#007bff",
     buttonTextColor = import.meta.env.VITE_APP_BUTTON_TEXT_COLOR || "#ffffff",
     buttonBorderColor = import.meta.env.VITE_APP_BUTTON_BORDER_COLOR  || "#007bff",

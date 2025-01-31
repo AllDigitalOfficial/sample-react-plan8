@@ -23,6 +23,8 @@ const HeroSection = () => {
   const contractTotalAmount =
     import.meta.env.VITE_APP_CONTRACT_TOTAL_AMOUNT ||
     "0.1% for every 500 BNB on platform address balance"; // Default contract total amount bonus
+  const textColor1 = import.meta.env.VITE_APP_TEXT_COLOR1 || "#ffffff"; // Default text color
+  const textColor2 = import.meta.env.VITE_APP_TEXT_COLOR2 || "#ffffff"; // Default text color
 
   return (
     <Container
@@ -50,16 +52,16 @@ const HeroSection = () => {
               </h1>
               <div>
                 <p className="mb-3">
-                  <span>Basic interest rate : </span>
-                  <span style={{ color: "#ffffff" }}>{basicInterestRate}</span>
+                  <span style={{ color: textColor1 }}>Basic interest rate : </span>
+                  <span style={{ color: textColor2 }}>{basicInterestRate}</span>
                 </p>
                 <p className="mb-3">
-                  <span>Personal hold-bonus: </span>
-                  <span style={{ color: "#ffffff" }}>{personalHoldBonus}</span>
+                  <span style={{ color: textColor1 }}>Personal hold-bonus: </span>
+                  <span style={{ color: textColor2 }}>{personalHoldBonus}</span>
                 </p>
                 <p className="mb-3">
-                  <span>Contract total amount bonus : </span>
-                  <span style={{ color: "#ffffff" }}>
+                  <span style={{ color: textColor1 }}>Contract total amount bonus : </span>
+                  <span style={{ color: textColor2 }}>
                     {contractTotalAmount}
                   </span>
                 </p>
